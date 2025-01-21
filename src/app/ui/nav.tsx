@@ -4,11 +4,19 @@ import Logo from './logo'
 import Image from 'next/image'
 import { useState } from 'react'
 
+import { FaTelegramPlane } from "react-icons/fa";
+
+
 const navigation = [
-  { name: 'Shop All', href: '#', current: true },
-  { name: 'Our Story', href: '#', current: false },
-  { name: 'Blog', href: '#', current: false },
-  { name: 'Pages', href: '#', current: false },
+  { name: 'Санкт-Петербург', href: '#', current: false },
+  { name: 'Сладкие дни', href: '#', current: false },
+  { name: 'Подарочные наборы', href: '#', current: false },
+  { name: 'Создать набор', href: '#', current: false },
+  { name: 'Создать дизайн', href: '#', current: false },
+  { name: 'Компаниям', href: '#', current: false },
+  { name: 'Весь каталог', href: '#', current: false },
+  { name: '8 812 309-82-88', href: '#', current: false },
+
 ]
 
 function classNames(...classes: (string | boolean | null | undefined)[]): string {
@@ -24,12 +32,12 @@ interface NavBarInterface{
 
 const NavBar: React.FC<NavBarInterface> = ({cartItems}) => {
   return (
-    <Disclosure as="nav" className="bg-[#F5F5F5] w-full max-w-screen-2xl px-4 relative">
+    <Disclosure as="nav" className="bg-[#F7EBE5] w-full max-w-screen-2xl px-4 relative">
       <div className="max-w-screen-2xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <DisclosureButton className="bg-[#F7EBE5] group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
@@ -47,6 +55,7 @@ const NavBar: React.FC<NavBarInterface> = ({cartItems}) => {
                     key={item.name}
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
+                    className='border-b-2 border-slate-500'
                   >
                     {item.name}
                   </a>
@@ -72,8 +81,8 @@ const NavBar: React.FC<NavBarInterface> = ({cartItems}) => {
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
-                item.current ? '' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
+                item.current ? '' : 'border-b border-slate-300 text-center hover:bg-gray-700 hover:text-white',
+                'block  px-3 py-2 text-base font-medium last:border-0',
               )}
             >
               {item.name}
