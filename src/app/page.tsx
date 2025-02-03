@@ -9,6 +9,7 @@ const loveImage = "/love-big.png"
 const arrowRight = "/arrow-right-svgrepo-com.svg"
 const catalog1 = "/catalog1.png";
 const bcgCatalog1 = "/background-catalog1.png";
+const heart = "/popular/heart.png"
 
 export default function Home() {
 
@@ -19,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-[#EDEDF0] overflow-hidden">
+    <div className="bg-[#EDEDF0]">
       <div className="flex flex-col items-center">
         <NavBar cartItems = {cartItems}/>
       </div>
@@ -100,6 +101,35 @@ export default function Home() {
           </div>
             
          </div>
+      </section>
+
+      <section className="bg-white mt-[40px] px-[16px] pb-[30px]">
+        <div>
+          <h1 className="mb-[28px] text-center">Популярные наборы</h1>
+        </div>
+        <div className="grid grid-cols-2">
+          <div className="w-[140px] lg:w-[370px] h-[215px] lg:h-[459px] border border-[#EDEDF0] rounded-[5px] mr-[8px] mt-[9px]">
+            <div className="p-[8px] lg:p-[0px]">
+              <Image className="w-[124px] lg:w-[370px] h-[98px] lg:h-[300px]" src={heart} width={370} height={300} alt="heart"></Image>
+            </div>
+            <div className="px-[8px] py-[21px]">
+              <h3 className="text-xs lg:text-[18px]">Сердце</h3>
+              <p className="text-[10px] lg:text-[14px]">24 штуки в коробке в виде сердца. Ассорти из 6 вкусов</p>
+            </div>
+            <div className="flex border-t border-[#EDEDF0] items-center">
+              <div className="flex justify-center items-center border-r border-[#EDEDF0] w-[70%] lg:text-[18px] h-[56px]">
+                2800 руб
+              </div>
+              <div className="w-[30%] flex items-center justify-center">
+                <div className="flex items-center justify-center w-[12px] h-[16px] lg:w-[103px] lg:h-[20px] border border-indigo-500">
+                  <div className="w-[12px] h-[16px] border border-indigo-500 mr-[10px]"></div>
+                  <span>В корзину</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
       
     </div>
